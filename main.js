@@ -130,7 +130,7 @@ function Platform() {
       else if (this.type == 4 && this.state == 1) this.cy = 1000;
 
       ctx.drawImage(image, this.cx, this.cy, this.cwidth, this.cheight, this.x, this.y, this.width, this.height);
-    } catch (e) {}
+    } catch (e) { 1, 1, 1, 1, 1, 1 }
   };
 
   //Platform types
@@ -139,12 +139,11 @@ function Platform() {
   //3: Breakable (Go through)
   //4: Vanishable 
   //Setting the probability of which type of platforms should be shown at what score
-  if (score >= 5000) this.types = [2, 3, 3, 3, 4, 4, 4, 4];
-  else if (score >= 2000 && score < 5000) this.types = [2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4];
-  else if (score >= 1000 && score < 2000) this.types = [2, 2, 2, 3, 3, 3, 3, 3];
-  else if (score >= 500 && score < 1000) this.types = [1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3];
-  else if (score >= 100 && score < 500) this.types = [1, 1, 1, 1, 2, 2];
-  else this.types = [1];
+  if (score >= 5000) this.types = [1, 1, 1, 1, 1, 1, 1, 1];
+  else if (score >= 2000 && score < 5000) this.types = [1, 1, 1, 1, 2, 4, 3, 2, 3, 4, 1];
+  else if (score >= 1000 && score < 2000) this.types = [1, 2, 3, 1, 2, 3, 1, 2];
+  else if (score >= 500 && score < 1000) this.types = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1];
+  else if (score >= 100 && score < 500) this.types = [1, 1, 1, 1, 1, 1];
 
   this.type = this.types[Math.floor(Math.random() * this.types.length)];
 
